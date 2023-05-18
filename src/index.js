@@ -1,9 +1,12 @@
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
+
 const groceriesRoute = require("./routes/groceries");
 const marketsRoute = require("./routes/market");
 const authRoute = require("./routes/auth");
+
+require("./database");
 
 const app = express();
 const PORT = 3001;
