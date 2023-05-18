@@ -30,6 +30,11 @@ const supermarkets = [
   },
 ];
 
+router.use((request, response, next) => {
+  if (request.session.user) next();
+  else response.send(401);
+});
+
 router.get("", (request, response) => {
   const { miles } = request.query;
   const parsedMiles = parseInt(miles);

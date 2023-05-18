@@ -26,5 +26,6 @@ app.use((request, response, next) => {
 
 app.use("/groceries", groceriesRoute);
 app.use("/markets", marketsRoute);
+app.use("/auth", authRoute);
 
 app.listen(PORT, () => console.log(`Running express server on Port ${PORT}!`));
