@@ -18,7 +18,9 @@ const groceryList = [
 ];
 
 router.use((request, response, next) => {
-  if (request.session.user) next();
+  console.log("Inside groceries Auth check middleware");
+  console.log(request.user);
+  if (request.user) next();
   else response.send(401);
 });
 
